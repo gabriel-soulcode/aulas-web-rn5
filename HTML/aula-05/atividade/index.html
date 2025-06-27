@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+
+<body>
+
+    <h1>Cadastro de Evento</h1>
+
+    <form action="" method="get" autocomplete="off" style="display:flex;flex-direction:column;align-items:start;gap:10px;">
+
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" required placeholder="Digite seu nome" />
+
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade" min="0" max="120" />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" id="estado" />
+
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade" />
+
+        <label for="escolaridade">Escolaridade</label>
+        <select name="escolaridade" id="escolaridade">
+            <option value="" disabled selected>Selecione uma escolaridade</option>
+            <option value="Ensino Médio">Ensino Médio</option>
+            <option value="Ensino Técnico">Ensino Técnico</option>
+            <option value="Ensino Superior">Ensino Superior</option>
+            <option value="Outro">Outro</option>
+        </select>
+
+        <label for="interesses">Interesses</label>
+        <div>
+            <input type="checkbox" name="interesses" id="prog" value="Programação" />
+            <label for="prog">Programação</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="design" value="Design" />
+            <label for="design">Design</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="robo" value="Robótica" />
+            <label for="robo">Robótica</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="jogo" value="Jogos Digitais" />
+            <label for="jogo">Jogos Digitais</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="ia" value="Inteligência Artificial" />
+            <label for="ia">Inteligência Artificial</label>
+        </div>
+
+        <label>Participará de Palestra</label>
+        <div>
+            <input type="radio" name="participar" id="sim" value="Sim" required />
+            <label for="sim">SIM</label>
+        </div>
+        <div>
+            <input type="radio" name="participar" id="nao" value="Não" required />
+            <label for="nao">NÃO</label>
+        </div>
+
+        <label for="mais">Conte-nos mais</label>
+        <textarea name="mais" id="mais" cols="25"></textarea>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+
+    </form>
+
+</body>
+
+</html>
