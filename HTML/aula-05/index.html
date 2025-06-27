@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 05</title>
+</head>
+
+<body>
+
+    <h1>Formulário das Forças Armadas do Brasil</h1>
+
+    <form action="#" method="post" style="display:flex;flex-direction:column;align-items:start;gap:10px">
+
+        <label for="nome">Nome Completo</label>
+        <input type="text" name="nome" id="nome" required placeholder="Digite seu nome completo" />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required placeholder="seuemail@exemplo.com" />
+
+        <label for="altura">Altura (cm)</label>
+        <input type="number" name="altura" id="altura" value="175" min="0" max="400" />
+
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" required minlength="6" maxlength="50" />
+
+        <label for="resumo">Resumo de Vida</label>
+        <textarea name="resumo" id="resumo" cols="30" rows="3" style="resize:vertical"></textarea>
+
+        <label>Formação</label>
+        <div>
+            <input type="radio" name="formacao" id="exercito" value="Exército" />
+            <label for="exercito">Exército</label>
+        </div>
+        <div>
+            <input type="radio" name="formacao" id="marinha" value="Marinha" checked />
+            <label for="marinha">Marinha</label>
+        </div>
+        <div>
+            <input type="radio" name="formacao" id="aeronautica" value="Aeronáutica" />
+            <label for="aeronautica">Aeronáutica</label>
+        </div>
+
+        <label>Interesses</label>
+        <div>
+            <input type="checkbox" name="interesses" id="infor" value="Informática" />
+            <label for="infor">Informática</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="infan" value="Infantaria" checked />
+            <label for="infan">Infantaria</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="engen" value="Engenharia" />
+            <label for="engen">Engenharia</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="caval" value="Cavalaria" disabled />
+            <label for="caval">Cavalaria</label>
+        </div>
+        <div>
+            <input type="checkbox" name="interesses" id="medic" value="Medicina" />
+            <label for="medic">Medicina</label>
+        </div>
+
+        <label for="estado">Estado</label>
+        <select name="estado" id="estado">
+            <option value="" disabled>Selecione um estado</option>
+            <optgroup label="Nordeste">
+                <option value="CE">Ceará</option>
+                <option value="PE">Pernambuco</option>
+            </optgroup>
+            <optgroup label="Sudeste">
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="SP" selected>São Paulo</option>
+            </optgroup>
+            <option value="AM">Amazonas</option>
+            <option value="PR">Paraná</option>
+        </select>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" name="telefone" id="telefone" disabled />
+
+        <label for="dateNascimento">Data de Nascimento</label>
+        <input type="date" name="dateNascimento" id="dateNascimento" />
+
+        <label for="horaNascimento">Horário de Nascimento</label>
+        <input type="time" name="horaNascimento" id="horaNascimento" />
+
+        <label for="foto">Foto 3x4</label>
+        <input type="file" name="foto" id="foto" accept="image/*" />
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" placeholder="000.000.000-00">
+
+        <!-- <input type="submit" value="Enviar" /> -->
+
+        <button type="submit">Enviar</button>
+
+        <button type="reset">Limpar</button>
+
+        <button type="button" disabled>Não Faz Nada</button>
+        
+    </form>
+    
+</body>
+
+</html>
