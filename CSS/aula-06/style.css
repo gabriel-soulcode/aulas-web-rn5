@@ -1,0 +1,54 @@
+h1 {
+    font-weight: 500;
+    font-family: Calibri;
+}
+
+p {
+    color: yellowgreen;
+    font-style: italic;
+    font-size: 24px;
+}
+
+#slogan {
+    color: crimson;
+}
+
+.link {
+    color: cadetblue;
+}
+
+.link:visited {
+    color: orange;
+}
+
+.link:hover {
+    color: darkblue;
+}
+
+.link:active {
+    color: red;
+}
+
+.link:focus {
+    font-weight: bold;
+}
+
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(yellowgreen, green);
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.shadow {
+    box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.6);
+}
+
+#slogan .button {
+    background: linear-gradient(blue, red);
+    color: white;
+}

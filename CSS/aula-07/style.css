@@ -1,0 +1,16 @@
+#name {
+    color: gold;
+}
+
+#rgb {
+    color: rgb(26, 118, 175);
+}
+
+#hexa {
+    color: #C68626;
+}
+
+#alpha {
+    /* color: #00000080; */
+    color: rgba(0, 0, 0, 0.5);
+}

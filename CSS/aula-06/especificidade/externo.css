@@ -1,0 +1,29 @@
+h2 {
+    /* color: purple !important; */
+}
+
+
+h2.titulo#titulo { /* (1, 1, 1) */
+    color: gray;
+}
+
+
+#titulo { /* (1, 0, 0) */
+    color: tomato;
+}
+
+.titulo:hover { /* (0, 2, 0) */
+    color: violet;
+}
+
+.titulo { /* (0, 1, 0) */
+    color: green;
+}
+
+main section h2 { /* (0, 0, 3) */
+    color: blue;
+}
+
+h2 { /* (0, 0, 1) */
+    color: red;
+}
