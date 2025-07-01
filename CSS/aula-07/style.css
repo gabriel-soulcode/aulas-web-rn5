@@ -1,16 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 #name {
     color: gold;
+    background-color: #111111;
+    font-family: 'Times New Roman', 'Times', serif;
+    font-size: 50px;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: line-through;
 }
 
 #rgb {
     color: rgb(26, 118, 175);
+    background-color: rgb(18, 188, 61);
+    font-family: 'Poppins', 'Verdana', 'Arial', system-ui, sans-serif;
+    font-size: 2rem;
 }
 
 #hexa {
     color: #C68626;
+    background-color: gray;
+    font-family: monospace;
+    font-size: 2em;
 }
 
 #alpha {
     /* color: #00000080; */
     color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 10, 20, 0.8);
+    font-family: "Montserrat", sans-serif;
+    font-size: 200%;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.2;
+    word-spacing: 10px;
+    letter-spacing: -5px;
 }
