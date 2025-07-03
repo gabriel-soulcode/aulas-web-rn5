@@ -1,0 +1,32 @@
+h1 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: red;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 2rem;
+        color: orange;
+    }
+}
+
+@media (width <= 480px) {
+    h1 {
+        font-size: 1.5rem;
+        color: green;
+    }
+}
+
+@media (min-width: 1400px) and (orientation: landscape) {
+    h1 {
+        font-size: 3rem;
+        color: darkred;
+    }
+}
+
+@media (max-width: 100px), (min-width: 1900px) {
+    h1 {
+        color: blue;
+    }
+}
