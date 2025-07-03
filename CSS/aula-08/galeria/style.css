@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 15px 0px;
+    text-align: center;
+}
+
+.galeria {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.foto {
+    max-width: 500px;
+    min-width: 300px;
+    min-height: 300px;
+    object-fit: cover;
+    flex: 1; /* estica */
+}
