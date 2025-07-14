@@ -139,8 +139,7 @@ console.log(nomeCarro);
 // Questionamento do if com ;
 
 let i = 3;
-if (i > 3) {
+if (i > 3); {
     console.log("Maior");
 }
 
-// Vai imprimir Maior?
