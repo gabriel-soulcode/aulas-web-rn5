@@ -18,6 +18,15 @@
             justify-content: center;
             align-items: center;
         }
+        .interruptor {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        #botao {
+            border: none;
+            background: none;
+        }
         #lampada {
             max-width: 300px;
         }
@@ -28,6 +37,12 @@
 
     <div class="janela">
         <img src="./images/lampada-apagada.png" alt="Lâmpada Acesa/Apagada" id="lampada">
+    </div>
+
+    <div class="interruptor">
+        <button id="botao">
+            <img src="./images/off.png" alt="On/Off" id="chave">
+        </button>
     </div>
     
     <script src="./script.js"></script>
