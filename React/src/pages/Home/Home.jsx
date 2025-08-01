@@ -3,67 +3,44 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+let intervalId = 0;
 
 export default function Home() {
-    const [contador, setContador] = useState(0);
-    const [times, setTimes] = useState([
-        "Fluminense",
-        "Flamengo",
-        "Vasco",
-        "Palmeiras",
-        "Botafogo"
-    ]);
+    const [time, setTime] = useState("00:00:00");
 
-    let resultado = null;
+    useEffect(() => {
+        startTime();
 
-    if (contador >= 0) {
-        resultado = "Positivo";
-    } else {
-        resultado = "Negativo";
+        return () => {
+            stopTime();
+        }
+    }, []);
+
+    function startTime() {
+        intervalId = setInterval(() => {
+            const timeCurrent = new Date().toLocaleTimeString();
+            setTime(timeCurrent);
+        }, 1000);
     }
 
-    function somar() {
-        setContador(contador + 1);
-    }
-
-    function subtrair() {
-        setContador(contador - 1);
+    function stopTime() {
+        clearInterval(intervalId);
     }
 
     return (
         <>
             <Header />
-            <Container>
-                <h2>Contador</h2>
-
-                <Button onClick={(somar)}>+</Button>
-
-                <span className="mx-2">{contador}</span>
-
-                <Button onClick={subtrair}>-</Button>
-
-                <p>
-                    { (contador % 2 == 0) ? <i>Par</i> : <b>Impar</b> }
-                </p>
-
-                <p>
-                    { (contador > 10) && "Maior que 10." }
-                </p>
-
-                <p>
-                    { resultado }
-                </p>
-
-                <ul>
-                    { times.map((time, index) => <li key={index}>{time}</li>) }
-                </ul>
-
-            </Container>
-
-            <Container className='py-5'>
+            <Container className='my-5'>
                 <h1>Página Inicial</h1>
                 <Link to="/products">Acesse a página de produtos</Link>
+            </Container>
+
+            <Container className="my-5">
+                <p>{ time }</p>
+                <Button onClick={startTime}>Iniciar</Button>
+                <Button onClick={stopTime}>Parar</Button>
             </Container>
             <Footer />
         </>
