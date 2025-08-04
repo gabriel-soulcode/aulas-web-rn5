@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import TableProd from "../../components/TableProd/TableProd";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import api from "../../api/api";
 
 const nomeValid = {
     required: {
@@ -40,16 +41,24 @@ const precoValid = {
 
 export default function Products() {
     const [produtos, setProdutos] = useState([]);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [saving, setSaving] = useState(false);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     
-    function onSubmit(dados) {
-        dados.id = produtos.length
-        setProdutos([...produtos, dados]);
+    async function onSubmit(dados) {
+        setSaving(true);
+        try {
+            await api.post("/produtos", dados);
+            reset();
+            buscarProdutos();
+        } catch (error) {
+            window.alert("Houve um erro.");
+            console.error(error);
+        }
+        setSaving(false);
     }
 
     async function buscarProdutos() {
-        const url = "https://api-nodejs-344f.onrender.com/produtos";
-        const response = await axios.get(url);
+        const response = await api.get("/produtos");
         const produtos = response.data;
         setProdutos(produtos);
     }
@@ -91,7 +100,9 @@ export default function Products() {
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Button type="submit">Cadastrar</Button>
+                    <Button type="submit" disabled={saving}>
+                        {saving ? "Cadastrando..." : "Cadastrar"}
+                    </Button>
                 </Form>
             </Container>
 
