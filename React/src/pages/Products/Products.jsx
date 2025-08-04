@@ -5,8 +5,9 @@ import "./Products.css";
 import { useEffect, useState } from "react";
 import TableProd from "../../components/TableProd/TableProd";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import api from "../../api/api";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const nomeValid = {
     required: {
@@ -43,7 +44,9 @@ export default function Products() {
     const [produtos, setProdutos] = useState([]);
     const [saving, setSaving] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    
+    const { isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+
     async function onSubmit(dados) {
         setSaving(true);
         try {
@@ -66,6 +69,10 @@ export default function Products() {
     useEffect(() => {
         buscarProdutos();
     }, []);
+
+    if (!isAuthenticated) {
+        navigate("/login");
+    }
 
     return (
         <>
