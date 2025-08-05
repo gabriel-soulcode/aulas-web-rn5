@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import api from "../../api/api";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { firebaseUser, firebaseUserToken } from "../../firebase/auth";
 
 const nomeValid = {
     required: {
@@ -50,7 +51,10 @@ export default function Products() {
     async function onSubmit(dados) {
         setSaving(true);
         try {
-            await api.post("/produtos", dados);
+            const token = await firebaseUserToken();
+            await api.post("/produtos", dados, {
+                headers: { Authorization: token }
+            });
             reset();
             buscarProdutos();
         } catch (error) {
@@ -61,7 +65,10 @@ export default function Products() {
     }
 
     async function buscarProdutos() {
-        const response = await api.get("/produtos");
+        const token = await firebaseUserToken();
+        const response = await api.get("/produtos", {
+            headers: { Authorization: token }
+        });
         const produtos = response.data;
         setProdutos(produtos);
     }
